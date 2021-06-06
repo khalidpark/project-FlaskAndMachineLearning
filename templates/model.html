@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>식수예측</title> 
+{% endblock %}
+
+{% block body %}
+<br>
+
+<h1>식수예측</h1>
+
+<br>
+<br>
+
+<h5>아워홈 데이터 분석팀은 환경을 생각합니다.</h5>
+<h5>인공지능을 활용하여 불필요하게 버려지는 잔반을 줄이고자 합니다.</h5>
+<h5>자사 데이터를 활용하여 식수인원을 예측하는 서비스입니다.</h5>
+<br>
+<br>
+
+<img class="fit-picture" src="https://www.foodnews.news/data/photos/20210208/art_16139693564691_6dbaa3.jpg">
+<br>
+<br>
+
+<h7>아래 수치를 입력하고 예측결과를 클릭해주세요.</h7>
+<br>
+<br>
+
+
+<div>
+    <form id="upload" action="/predict" method="POST">
+        <div>
+            <h3>1. 요일</h3>
+            <h7>(월:0, 화:1, 수:2, 목:3, 금:4)</h7>
+            <br>
+            <br>
+            <label for="number1"> 요일입력 :  </label>
+            <input type="number" value="number1" name="number1">
+        </div>
+        <br>
+        <div>
+            <h3>2. 본사정원수</h3>
+            <br>
+            <label for="number2"> 본사정원수 : </label>
+            <input type="number" value="number2" name="number2">
+        </div>
+        <br>
+        <div>
+            <h3>3. 본사출장자수</h3>
+            <br>
+            <label for="number3"> 본사출장자수 : </label>
+            <input type="number" value="number3" name="number3">
+        </div>
+        <br>
+        <br>
+        <input class="btn btn-primary" type="submit" value="예측 결과">
+        {% if predict %}
+            <span class="result_lable">
+               예상되는 식수인원은 : {{ predict }} 명입니다.
+            </span>
+        {% endif %}
+    </form>
+</div>
+
+<br>
+<br>
+
+{% endblock %}

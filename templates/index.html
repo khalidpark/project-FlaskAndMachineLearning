@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Home</title>
+{% endblock %}
+
+{% block body %}
+<br>
+<main role="main">
+    <div class="jumbotron">
+        <div class="col-sm-8 mx-auto">
+            <h1>아워홈 OURHOME</h1>
+            <br>
+            <p>대한민국 식문화를 이끌어가는 종합식품기업, 아워홈 직원 페이지에 오신걸 환영합니다.</p>
+            <p>2가지 서비스를 제공하고 있습니다.</p>
+            <p>1. AI 인공지능을 활용한 구내식당 식수 인원 예측 </p>
+            <p>2. 사내 블라인드 커뮤니티 </p>
+            <p> <a href="https://www.ourhome.co.kr/">아워홈 홈페이지</a> </p>
+            <p>
+                <a class="btn btn-primary" href="/model" role="button">식수 예측 프로그램 &raquo;</a>
+                <a class="btn btn-primary" href="/posts" role="button">블라인드 커뮤니티 &raquo;</a>
+            </p>
+            <img class="fit-picture" src="https://www.ourhome.co.kr/static/front/images/sub/img-ci2.png">
+        </div>
+    </div>
+</main>
+{% endblock %}

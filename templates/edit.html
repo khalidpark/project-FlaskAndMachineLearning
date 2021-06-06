@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>게시글 수정</title> 
+{% endblock %}
+
+{% block body %}
+<br>
+<h1>게시글 수정</h1>
+
+    <hr>
+    <h2>게시글 수정</h2>
+    <form action='/posts/edit/{{post.id}}' method='POST'>
+        <label for="title">누구에게</label>
+        <input class="form-control" type="text" name='title' id='title' value="{{ post.title }}" aria-label="Enter Title">
+        <br>
+        <label for="content">의견</label>
+        <textarea class="form-control" name='content' id="content" aria-label="Enter Content" rows="3">{{ post.content }}</textarea>
+        <br>
+        <input type='submit' value='수정하기'>
+    </form>
+    <hr>
+{% endblock %}

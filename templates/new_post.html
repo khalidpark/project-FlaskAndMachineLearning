@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>블라인드 커뮤니티</title> 
+{% endblock %}
+
+{% block body %}
+<br>
+<h1>블라인드 커뮤니티</h1>
+
+    <hr>
+    <h2>사내의 개선사항을 허심탄회하게 남겨주세요</h2>
+    <form action='/posts' method='POST'>
+        <br>
+        <label for="title">누구에게</label>
+        <input class="form-control" type="text" name='title' id='title' placeholder="누구에게" aria-label="누구에게">
+        <br>
+        <label for="content">의견</label>
+        <textarea class="form-control" name='content' id="content" placeholder="무분별한 비난이 아닌 건강한 비판을 부탁드립니다" aria-label="비난보다 비판을" rows="5"></textarea>
+        <br>
+        <input type='submit' value='남기기'>
+    </form>
+    <hr>
+{% endblock %}
